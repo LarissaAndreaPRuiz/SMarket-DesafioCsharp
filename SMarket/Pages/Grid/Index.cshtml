@@ -1,0 +1,115 @@
+﻿@page
+@model SMarket.Pages.Grid.IndexModel
+@{
+}
+
+<h3 class="mt-5">Meus Itens</h3>
+
+<div style="margin-bottom:16px" class="row gy-3">
+    <div class="col-md-12">
+        <form method="post" enctype="multipart/form-data">
+            <div style="float:left">
+                <input type="file" accept="text/plain" asp-for="FileSMarket" class="form-control" />
+            </div>
+            <div style="margin-left: 10px;float:left">
+                <button type="submit" class="btn btn-primary">Upload</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div style="margin-bottom:16px" class="row gy-3">
+    <div class="col-md-6">
+        <label for="cc-name" class="form-label">Pesquise</label>
+        <form method="post" asp-page-handler="filtro">
+            <div class="input-group">
+                <input asp-for="Filtro" class="form-control" />
+                <div class="input-group-append">
+                    <input type="submit" value="Pesquisar" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div style="margin-bottom:16px" class="row gy-3">
+    <div class="col-md-6">
+        <label for="cc-name" class="form-label">Faça o download do arquivo</label>
+        <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" method="post" asp-page-handler="createfile">
+            <div class="input-group">
+                <div class="input-group-append">
+                    <input type="submit" value="download" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Preco Custo
+            </th>
+            <th>
+                Preço Venda
+            </th>
+            <th>
+                NCM
+            </th>
+            <th>
+                Referência
+            </th>
+            <th>
+                Data Cadastro
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ListaItens)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrecoCusto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrecoVenda)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ncm)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Referencia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataCadastro)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <ul class="pagination">
+        @for (var i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                <a asp-page="./Index" asp-route-currentpage="@i" class="page-link">@i</a>
+            </li>
+        }
+    </ul>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,1 @@
+id   |nome                                                        |precoCusto|precoVenda|ncm     |referencia    |dataCriacao        

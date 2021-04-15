@@ -1,0 +1,68 @@
+﻿@page
+@model SMarket.Pages.Grid.EditModel
+@{
+}
+
+@using SMarket.Core.Model
+<div class="container mb-5 mt-5">
+
+    <h3>Administração de Item:</h3>
+
+    @if (!string.IsNullOrEmpty(Model.Mensagem))
+    {
+        <div class="alert alert-dismissible alert-info">
+            @Model.Mensagem
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Item.Id" />
+                <div class="form-group">
+                    <label asp-for="Item.Nome" class="control-label"></label>
+                    <input asp-for="Item.Nome" class="form-control" />
+                    <span asp-validation-for="Item.Nome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Item.PrecoCusto" class="control-label"></label>
+                    <input asp-for="Item.PrecoCusto" class="form-control" />
+                    <span asp-validation-for="Item.PrecoCusto" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Item.PrecoVenda" class="control-label"></label>
+                    <input asp-for="Item.PrecoVenda" class="form-control" />
+                    <span asp-validation-for="Item.PrecoVenda" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Item.Ncm" class="control-label"></label>
+                    <input asp-for="Item.Ncm" class="form-control" />
+                    <span asp-validation-for="Item.Ncm" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Item.Referencia" class="control-label"></label>
+                    <input asp-for="Item.Referencia" class="form-control" />
+                    <span asp-validation-for="Item.Referencia" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Item.DataCadastro" class="control-label"></label>
+                    <input asp-for="Item.DataCadastro" readonly="readonly" />
+                    <span asp-validation-for="Item.DataCadastro" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-route-id="@Model.Item.Id" type="submit" value="Salvar" class="btn btn-warning" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-page="./Index">Voltar para a lista</a>
+    </div>
+
+
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

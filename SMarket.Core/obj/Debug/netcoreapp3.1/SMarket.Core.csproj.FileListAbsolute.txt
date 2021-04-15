@@ -1,0 +1,12 @@
+C:\_test\SMarket\SMarket.Core\obj\Debug\netcoreapp3.1\SMarket.Core.csprojAssemblyReference.cache
+C:\_test\SMarket\SMarket.Core\obj\Debug\netcoreapp3.1\SMarket.Core.AssemblyInfoInputs.cache
+C:\_test\SMarket\SMarket.Core\obj\Debug\netcoreapp3.1\SMarket.Core.AssemblyInfo.cs
+C:\_test\SMarket\SMarket.Core\obj\Debug\netcoreapp3.1\SMarket.Core.csproj.CoreCompileInputs.cache
+C:\_test\SMarket\SMarket.Core\bin\Debug\netcoreapp3.1\SMarket.Core.deps.json
+C:\_test\SMarket\SMarket.Core\bin\Debug\netcoreapp3.1\SMarket.Core.dll
+C:\_test\SMarket\SMarket.Core\bin\Debug\netcoreapp3.1\SMarket.Core.pdb
+C:\_test\SMarket\SMarket.Core\obj\Debug\netcoreapp3.1\SMarket.Core.dll
+C:\_test\SMarket\SMarket.Core\obj\Debug\netcoreapp3.1\SMarket.Core.pdb
+C:\_test\SMarket\SMarket.Core\bin\Debug\netcoreapp3.1\SMarket.Core.runtimeconfig.json
+C:\_test\SMarket\SMarket.Core\bin\Debug\netcoreapp3.1\SMarket.Core.runtimeconfig.dev.json
+C:\_test\SMarket\SMarket.Core\obj\Debug\netcoreapp3.1\SMarket.Core.genruntimeconfig.cache
